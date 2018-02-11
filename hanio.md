@@ -13,9 +13,9 @@ int Hanio(int n,char a,char b,char c)
     if(n==1){ //若n=1，则直接移到最后一个，也只能移到最后一个柱子，因为不仅是n==1的情况，也是把n-1个移到中间一个后再进行的步骤
         cout<<a<<"->"<<c<<endl;
         return 0;}    
-    Hanio(n-1,a,c,b);
-    cout<<a<<"->"<<b<<endl;
-    Hanio(n-1,b,a,c);
+    Hanio(n-1,a,c,b);   //若第一个柱子的盘子部位1，则将n-1个盘子移到中间柱子,Hanio这个函数就是实现把n个盘子移到另外一个盘子上，其中一个盘子做temp
+    cout<<a<<"->"<<b<<endl;     //调用以上函数，实现的是从a到b,需要输出a->b，实现后，若为一个盘子，则返回上边的if语句
+    Hanio(n-1,b,a,c);       //将n-1个盘子移到temp盘子以后，即上边两行代码，需要将n-1个盘子移到最后一个盘子，又回到了整个大的问题
     return 0;
 }
 int main()

@@ -1,0 +1,21 @@
+## problem 
+Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.
+
+You may assume that the array is non-empty and the majority element always exist in the array.
+
+Credits:
+Special thanks to @ts for adding this problem and creating all test cases.
+
+## 编程实现
+```C
+int majorityElement(int* nums, int numsSize) {
+    int cnt = 0, res;
+    for (int i = 0; i < numsSize; ++i) {
+        if (cnt == 0) res = nums[i];
+        if (res == nums[i]) ++cnt;
+        else --cnt;
+    }
+    return res;
+}
+```
+## 说实话，没怎么看明白
